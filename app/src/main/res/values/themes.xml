@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        主题分两层：Base 是「真正的那些设置」，Theme.QuizBank 只是它的别名。
+
+        为什么要拆：Android 12 起的启动画面（SplashScreen）要读
+        windowSplashScreenBackground / windowSplashScreenAnimatedIcon 这两个 **API 31 才有**的属性，
+        它们只能放在 values-v31 里；不拆的话就要在 v31 里整份复制一遍主题，改一处漏一处。
+    -->
+    <style name="Theme.QuizBank.Base" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- 启动时先看见的是这张品牌底图，而不是一闪而过的纯白 -->
+        <item name="android:windowBackground">@drawable/splash_window</item>
+    </style>
+
+    <style name="Theme.QuizBank" parent="@style/Theme.QuizBank.Base" />
+
+    <!-- 拍照界面：全屏黑底，取景画面顶到边。-->
+    <style name="Theme.QuizBank.Camera" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <!--
+        收录面板：窗口透明，内容自己收在下面一张悬浮卡片里。
+
+        和 Theme.QuizBank.Transparent 的区别是它背后站的是一个正经的 Compose 界面
+        （要输入、要滚动），只是刻意不吃满屏幕 —— 上面露出来的部分是刷题软件里的原题，
+        用户一边看一边核对 OCR 认对没有。
+    -->
+    <style name="Theme.QuizBank.Sheet" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="Theme.QuizBank.Transparent" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+</resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    图标前景：一张**折了角的答卷**，上面两行题干，下半部分一个**青色对勾**。
+
+    为什么是这个组合（试过错的方向，别再改回去）：
+      · 第一版是「取景四角 + 竖长卡片 + 扫描光」，缩到 48dp 全糊在一起，
+        竖卡片像手机、底部那道扫描光像贴了条色带 —— 元素一多，这个尺寸上必然失败；
+      · 现在只留三样：纸（=题库里的题）、折角（一眼看出是卷子）、对勾（=答对）。
+        没有一个纯装饰元素，缩到 48dp 仍然读得出「一份做对的题」。
+
+    几何（改坐标前先量一遍）：纸 33..69 × 29..77，折角三角 (58,29)-(69,40)-(58,40)，
+    对勾 43..59.5 × 56..68.5。离画布中心 (54,54) 最远的是纸左下角 (33,77)，距离 31.1 < 33，
+    整个图形都在安全圆里，圆/方/方圆任何遮罩都切不到。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!--
+        这里**故意没有投影**：矢量图不能用模糊，只能拿错位的实心形状假装影子，
+        而硬边的黑影在 512px 下看着像印刷没套准，比没有影子更显廉价。
+        让纸浮起来的是底色渐变，不是影子。
+    -->
+
+    <!-- 纸：白色带一点极淡的蓝，靠渐变让平面有点厚度 -->
+    <path android:pathData="M41,29 H58 L69,40 V69 a8,8 0 0 1 -8,8 H41 a8,8 0 0 1 -8,-8 V37 a8,8 0 0 1 8,-8z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="33"
+                android:startY="29"
+                android:endX="70"
+                android:endY="78">
+                <item android:offset="0" android:color="#FFFFFFFF" />
+                <item android:offset="1" android:color="#FFE4EAFA" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- 折角 -->
+    <path
+        android:fillColor="#FFC3CFEA"
+        android:pathData="M58,29 L69,40 H58 Z" />
+
+    <!-- 两行题干 -->
+    <path
+        android:fillColor="#FF2B2352"
+        android:fillAlpha="0.20"
+        android:pathData="M37,45 h26 a1.8,1.8 0 0 1 0,3.6 h-26 a1.8,1.8 0 0 1 0,-3.6z" />
+    <path
+        android:fillColor="#FF2B2352"
+        android:fillAlpha="0.20"
+        android:pathData="M37,52 h15.5 a1.8,1.8 0 0 1 0,3.6 h-15.5 a1.8,1.8 0 0 1 0,-3.6z" />
+
+    <!-- 对勾：整套图标里唯一的彩色，一笔就够 -->
+    <path
+        android:pathData="M43,62 L49.5,68.5 L59.5,56"
+        android:strokeColor="#FF0FB5A6"
+        android:strokeWidth="5.0"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>

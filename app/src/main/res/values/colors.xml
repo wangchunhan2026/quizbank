@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 图标底色（真正的渐变在 drawable/ic_launcher_background.xml 里，这里留作单色兜底） -->
+    <color name="ic_launcher_background">#2A1D57</color>
+    <!-- 启动画面底色：和图标背景同一个墨蓝，点图标到看见界面是同一个画面在长大 -->
+    <color name="splash_background">#10193A</color>
+    <color name="bubble_bg">#1F6FEB</color>
+    <color name="bubble_fg">#FFFFFF</color>
+</resources>

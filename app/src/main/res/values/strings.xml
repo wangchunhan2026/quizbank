@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">题库助手</string>
+    <string name="fgs_channel_name">悬浮助手</string>
+    <string name="fgs_channel_desc">保持悬浮球常驻运行</string>
+    <string name="fgs_capture_channel_name">屏幕截取</string>
+    <string name="fgs_capture_channel_desc">截屏拍题所需的屏幕捕获服务</string>
+    <string name="fgs_float_title">题库助手已开启</string>
+    <string name="fgs_float_text">点按悬浮球可拍题或速查</string>
+    <string name="fgs_capture_title">正在截取屏幕</string>
+    <string name="fgs_capture_text">用于识别题目内容</string>
+</resources>

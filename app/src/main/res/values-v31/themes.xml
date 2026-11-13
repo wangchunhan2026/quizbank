@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Android 12+ 的启动画面。系统自己会画：一块底色 + 居中的图标（图标会被裁成圆形）。
+
+    底色和图标都跟启动器图标用同一套，用户从点图标到看见界面是**同一个画面在长大**，
+    不会出现「图标是紫的、启动页是白的」那种割裂。
+-->
+<resources>
+    <style name="Theme.QuizBank" parent="@style/Theme.QuizBank.Base">
+        <item name="android:windowSplashScreenBackground">@color/splash_background</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+    </style>
+</resources>

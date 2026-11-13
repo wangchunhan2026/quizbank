@@ -1,0 +1,37 @@
+# ---- Android / Gradle ----
+*.iml
+.gradle/
+.kotlin/
+local.properties
+.idea/
+.DS_Store
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+*.hprof
+
+# ---- 签名与密钥（绝不入库）----
+# 发布用的签名文件 + 口令。开源仓库里只有「有就签、没有就出未签名包」的逻辑，
+# 你自己的 keystore 和 keystore.properties 留在本地。
+keystore/
+keystore.properties
+*.jks
+*.keystore
+*.p12
+*.pem
+
+# ---- 产物 ----
+*.apk
+*.aab
+*.ap_
+dist/
+outputs/
+
+# ---- 题库数据 / 抓取产物（第三方资料，不进仓库）----
+*.xls
+*.xlsx
+*.csv
+题库素材/
+_pocr_out/
+_跑批/
