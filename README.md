@@ -30,6 +30,9 @@
 环境：JDK 17、Android SDK Platform 35（Build-Tools 35）。
 
 ```bash
+git clone https://github.com/wangchunhan2026/quizbank.git
+cd quizbank
+
 # 1. 配置 SDK 路径
 echo "sdk.dir=/path/to/Android/sdk" > local.properties
 
@@ -72,7 +75,7 @@ app/src/main/java/com/daily/quizbank/
 
 ## 匹配算法
 
-这是整个项目最花心思的地方。摘要如下，细节见 [docs/匹配算法.md](docs/匹配算法.md)。
+这是整个项目最花心思的地方。摘要如下，细节见 [docs/matching-algorithm.md](docs/matching-algorithm.md)。
 
 四条路线同时算，取最高分：
 
@@ -122,6 +125,12 @@ DF 都 ≥ 2，于是它 100% 对上了却被丢掉（那个库 62% 的题都这
 - 匹配是字符级相似度，不理解语义 —— 问法被改写的题会退回 AI；
 - .xls 解析是自己写的 BIFF8 子集，只覆盖题库导出常见的单元格类型（数字/文本/公式缓存值）；
 - 悬浮窗需要「显示在其他应用上层」权限，部分厂商 ROM 还要额外允许后台运行。
+
+## 关于收费
+
+**免费，没有内购、没有激活码、没有功能限制。** 最早写过一版一机一码、准备卖出去，后来决定直接开源，
+所以代码里没有任何授权校验 —— 编译出自己的包，导入自己的题库就能用。如果哪天在别处看到有人卖这个，
+那不是我，你也不用买。
 
 ## 许可
 
