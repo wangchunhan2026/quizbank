@@ -25,7 +25,15 @@
 | **AI 兜底** | 本地匹配不到时才问大模型；支持 DeepSeek 官方与**任意 OpenAI 兼容接口**（内置 8 家预设，带连接测试与模型下拉） |
 | **识别路线** | 纯 OCR / 视觉模型 / 自动切换；纯文字通道不会把截图发给只吃文字的服务商 |
 
-## 快速开始
+## 下载
+
+不想折腾编译的话，直接下现成的包：
+
+**[⬇ quizbank-2.30.0-release.apk](https://github.com/wangchunhan2026/quizbank/releases/latest)** · Android 8.0+
+
+（安装时手机会提示「未知来源」，允许即可。应用本身不含任何题库，装好自己导入。）
+
+## 从源码编译
 
 环境：JDK 17、Android SDK Platform 35（Build-Tools 35）。
 
